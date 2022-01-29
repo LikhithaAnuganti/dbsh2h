@@ -1,6 +1,12 @@
 H1:
 select account_key from customer_account_info,customer_transactions,countries_info group by Transaction Type having count(*)>10;
 
+M1:
+select account_key from customer_account_info,customer_transactions,countries_info group by Transaction Type having count(*)>6;
+
+L1:
+select account_key from customer_account_info,customer_transactions group by Transaction Type having count(*)<10;
+
 H4: 
 select party_key(including just one attribute) from customer_info, customer_transactions(this is the main table, other tables just join them)
 group by Transaction_Date having SUM(Transaction_Amount(in $))>20  
